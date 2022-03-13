@@ -12,6 +12,13 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import secretkey
+import os.path
+
+PWD = os.path.dirname(os.path.realpath(__file__))  # project root path
+
+STATICFILES_DIRS = (
+    PWD + '/static/',  # or project_static, whatever
+)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent

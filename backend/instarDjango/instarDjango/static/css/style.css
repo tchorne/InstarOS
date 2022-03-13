@@ -1,0 +1,47 @@
+*
+{
+    margin: 5px;
+    padding: 5px;
+}
+body
+{
+    background-color: #333;
+    color: white;
+}
+.char_list{
+    margin-left: 0px;
+    font-size: 15pt;
+    color: whitesmoke;
+    animation: slidefromleft 2s;
+}
+.instarlogo 
+{
+    margin-top: 10px;
+    
+    animation-duration: 1s;
+    animation-name: logofade;
+    color: white;
+    font: 700 normal 2.5em 'tahoma';
+  text-shadow: 5px 2px #222324, 2px 4px #222324, 3px 5px #222324;
+}
+@keyframes slidefromleft{
+    from {
+        margin-left: -10px;
+        opacity: 0%;
+    }
+    to {
+        margin-left: 0px;
+        opacity: 100%;
+    }
+}
+
+@keyframes logofade{
+    from {
+        margin-top: -10px;
+        opacity: 0%;
+    }
+    to {
+        margin-top: 10px;
+        opacity: 100%;
+    }
+}
