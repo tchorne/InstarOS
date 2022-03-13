@@ -14,6 +14,12 @@ body
     color: whitesmoke;
     animation: slidefromleft 2s;
 }
+.notes_list{
+    margin-left: 0px;
+    font-size: 15pt;
+    color: whitesmoke;
+    animation: slidefromleft 4s;
+}
 .instarlogo 
 {
     margin-top: 10px;
