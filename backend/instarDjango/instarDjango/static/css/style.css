@@ -24,6 +24,12 @@ body
     font: 700 normal 2.5em 'tahoma';
   text-shadow: 5px 2px #222324, 2px 4px #222324, 3px 5px #222324;
 }
+
+.form_control {
+    background-color: #333;
+    color: #e6e6e6
+}
+
 @keyframes slidefromleft{
     from {
         margin-left: -10px;
