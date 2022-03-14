@@ -31,12 +31,12 @@
                 // create data
                 var star_list = [
                     {% for star in star_list %}
-                        '{{star.name}}'
+                        '{{star.name}}',
                     {%endfor%}
                 ]
                 var star_image_list = [
                 {% for star in star_list %}
-                        '{{star.imageUrl}}'
+                        '{{star.imageUrl}}',
                     {%endfor%}
                 ]
                 var planet_list = '{{planet_list}}'
@@ -48,7 +48,7 @@
 
                 ],
                 edges: [
-                    //{from: "Richard", to: "Larry"},
+                    {from: "Sol", to: "The Bleeding Sun"},
                 ]
                 };
                 for(i = 0; i < star_list.length; i++){

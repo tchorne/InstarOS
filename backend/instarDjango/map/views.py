@@ -2,7 +2,6 @@ from json import JSONEncoder
 import json
 from django.shortcuts import render
 from .models import Planet,Star
-import jsonpickle
 
 def map(request):
     star_list = Star.objects.all()
