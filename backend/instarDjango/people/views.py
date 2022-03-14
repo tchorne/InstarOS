@@ -23,3 +23,10 @@ def submitNote(request, character_id):
     new_note = Note(character = character, note_text = request.POST['note'])
     new_note.save()
     return HttpResponseRedirect(reverse('people:detail', args=(character_id,)))
+
+def deleteNote(request, note_id):
+    note = get_object_or_404(Note, pk=note_id)
+    character = note.character
+
+    note.delete()
+    return HttpResponseRedirect(reverse('people:detail', args=(character.id,)))
