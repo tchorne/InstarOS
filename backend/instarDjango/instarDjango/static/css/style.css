@@ -8,6 +8,9 @@ body
     background-color: #333;
     color: white;
 }
+.card{
+    background-color: #222;
+}
 .char_list{
     margin-left: 0px;
     font-size: 15pt;
@@ -36,6 +39,10 @@ body
     color: #e6e6e6
 }
 
+.bi-map{
+    display: flex;
+    justify-content: space-between;
+}
 @keyframes slidefromleft{
     from {
         margin-left: -10px;
