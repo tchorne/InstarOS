@@ -6,6 +6,11 @@ class Star(models.Model):
     imageUrl = models.URLField(max_length=200)
     def __str__(self):
         return self.name
+    def to_json(self):
+        return {
+            'name': self.name,
+            'imageUrl': self.imageUrl,
+        }
 
 class Planet(models.Model):
     name = models.CharField(max_length=200)
