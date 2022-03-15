@@ -39,7 +39,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 DEBUG = True
 
 ALLOWED_HOSTS = ["instar-os.herokuapp.com", "https://instar-os.herokuapp.com"]
-CSRF_TRUSTED_ORIGINS = ['instar-os.herokuapp.com', "https://instar-os.herokuapp.com", "http://instar-os.herokuapp.com"]
+CSRF_TRUSTED_ORIGINS = ["https://instar-os.herokuapp.com", "http://instar-os.herokuapp.com"]
 
 # Application definition
 
@@ -89,6 +89,7 @@ WSGI_APPLICATION = 'instarDjango.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
+# Parse database configuration from $DATABASE_URL
 
 DATABASES = {
     'default': {
@@ -96,6 +97,8 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+import dj_database_url
+DATABASES['default'] =  dj_database_url.config()
 
 
 # Password validation
