@@ -36,7 +36,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["instar-os.herokuapp.com", "https://instar-os.herokuapp.com"]
 CSRF_TRUSTED_ORIGINS = ["https://instar-os.herokuapp.com", "http://instar-os.herokuapp.com"]
