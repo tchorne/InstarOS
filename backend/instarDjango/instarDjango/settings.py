@@ -39,7 +39,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 DEBUG = True
 
 ALLOWED_HOSTS = ["instar-os.herokuapp.com", "https://instar-os.herokuapp.com"]
-CSRF_TRUSTED_ORIGINS = ['instar-os.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['instar-os.herokuapp.com', "https://instar-os.herokuapp.com", "http://instar-os.herokuapp.com"]
 
 # Application definition
 
