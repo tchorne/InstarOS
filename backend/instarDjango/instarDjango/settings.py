@@ -11,9 +11,12 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+from backend.instarDjango.secretkey import SECRET_KEY
 import secretkey
 import os.path
 import django_heroku
+import environ
+environ.Env.read_env()
 
 PWD = os.path.dirname(os.path.realpath(__file__))  # project root path
 
@@ -29,7 +32,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = secretkey.SECRET_KEY
+#SECRET_KEY = secretkey.SECRET_KEY
+SECRET_KEY = os.environ['secret_key']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
