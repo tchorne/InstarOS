@@ -1,1 +1,1 @@
-web: gunicorn backend\instarDjango\instarDjango.wsgi
+web: gunicorn backend.instarDjango.instarDjango.wsgi
