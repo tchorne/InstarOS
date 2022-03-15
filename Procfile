@@ -1,1 +1,1 @@
-web: gunicorn backend.instarDjango.instarDjango.wsgi
+web: python backend/instarDjango/run_production_server.py
