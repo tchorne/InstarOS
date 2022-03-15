@@ -10,7 +10,7 @@ PORT = os.environ['PORT']
 
 from django.core.handlers.wsgi import WSGIHandler as DjangoWSGIApp
 application = DjangoWSGIApp()
-server = WSGIServer(("127.0.0.1", int(PORT)), application)
+server = WSGIServer(("0.0.0.0", int(PORT)), application)
 
-print("Starting server on http://127.0.0.1:" + PORT)
+print("Starting server on http://0.0.0.0:" + PORT)
 server.serve_forever()
