@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 from backend.instarDjango.secretkey import SECRET_KEY
-import secretkey
+#import secretkey
 import os.path
 import django_heroku
 import environ
