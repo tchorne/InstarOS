@@ -1,1 +1,1 @@
-web: python backend/instarDjango/run_production_server.py
+worker: python backend/instarDjango/run_production_server.py
