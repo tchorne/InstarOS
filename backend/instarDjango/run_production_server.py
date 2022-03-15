@@ -9,6 +9,6 @@ django.setup()
 
 from django.core.handlers.wsgi import WSGIHandler as DjangoWSGIApp
 application = DjangoWSGIApp()
-server = WSGIServer(("127.0.0.1", 1234), application)
-print("Starting server on http://127.0.0.1:1234")
+server = WSGIServer(("127.0.0.1", 8000), application)
+print("Starting server on http://127.0.0.1:8000")
 server.serve_forever()
