@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
-from backend.instarDjango.secretkey import SECRET_KEY
+#from backend.instarDjango.secretkey import SECRET_KEY
 #import secretkey
 import os.path
 import django_heroku
@@ -33,7 +33,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY = secretkey.SECRET_KEY
-SECRET_KEY = os.environ['secret_key']
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
