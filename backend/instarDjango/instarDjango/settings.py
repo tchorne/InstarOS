@@ -14,7 +14,7 @@ from pathlib import Path
 #from backend.instarDjango.secretkey import SECRET_KEY
 #import secretkey
 import os.path
-import django_heroku
+import django_on_heroku
 import environ
 environ.Env.read_env()
 
@@ -158,4 +158,4 @@ STATICFILES_DIRS = (
 # prod_db  =  dj_database_url.config(conn_max_age=500)
 # DATABASES['default'].update(prod_db)
 
-django_heroku.settings(locals())
+django_on_heroku.settings(locals())
