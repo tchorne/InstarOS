@@ -1,2 +1,6 @@
 backend/instarDjango/secretkey.py
 backend/instarDjango/instarDjango/.env
+instar/pyvenv.cfg
+# home = C:\Users\vhhor\AppData\Local\Programs\Python\Python310
+# include-system-site-packages = false
+# version = 3.10.0
