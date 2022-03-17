@@ -53,8 +53,8 @@
                         {from: "Sol", to: "The Bleeding Sun"},
                         ]
                     };
-                    for(i = 0; i < star_list.length; i++){
-                        data.nodes.push({id: star_list[i], fill: {src: star_image_list[i]}})
+                    for(i = 0; i < body_list.length; i++){
+                        data.nodes.push({id: body_list[i], fill: {src: body_image_list[i]}})
                     }
                     var chart = anychart.graph(data);
                     // set the title
