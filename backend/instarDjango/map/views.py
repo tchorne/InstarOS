@@ -1,14 +1,13 @@
 from json import JSONEncoder
 import json
 from django.shortcuts import render
-from .models import Planet,Star
+from .models import Body
 
 def map(request):
-    star_list = Star.objects.all()
-    planet_list = Planet.objects.all()
+    body_list = Body.objects.all()
 
     context = {
-        'star_list': star_list,
-        'planet_list': planet_list,
+        'body_list': body_list,
+        
     }
     return render(request,'map/map.html',context)

@@ -1,7 +1,6 @@
 from django.contrib import admin
 
-from .models import Star, Planet
+from .models import Body
 
-admin.site.register(Star)
-admin.site.register(Planet)
 # Register your models here.
+admin.site.register(Body)

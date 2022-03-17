@@ -38,7 +38,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 if(os.environ['DEBUG']):
-    DEBUG = os.environ['DEBUG']
+    DEBUG = True if os.environ['DEBUG']=='True' else False
 
 ALLOWED_HOSTS = ["instar-os.herokuapp.com", "https://instar-os.herokuapp.com"]
 CSRF_TRUSTED_ORIGINS = ["https://instar-os.herokuapp.com", "http://instar-os.herokuapp.com"]

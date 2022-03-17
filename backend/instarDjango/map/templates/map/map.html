@@ -32,17 +32,16 @@
                     
                     
                     // create data
-                    var star_list = [
-                    {% for star in star_list %}
-                    '{{star.name}}',
+                    var body_list = [
+                    {% for body in body_list %}
+                    '{{body.name}}',
                     {%endfor%}
                     ]
-                    var star_image_list = [
-                    {% for star in star_list %}
-                    '{{star.imageUrl}}',
+                    var body_image_list = [
+                    {% for body in body_list %}
+                    '{{body.imageUrl}}',
                     {%endfor%}
                     ]
-                    var planet_list = '{{planet_list}}'
                     
                     var data = {
                         
@@ -82,7 +81,7 @@
                                 for (var i = 0; i < data.nodes.length; i++) {
                                     if (data.nodes[i].id === tag.id) {
                                         document.getElementById("moreInfoName").textContent = data.nodes[i].id
-                                        document.getElementById("moreInfoImg").src = star_image_list[i]
+                                        document.getElementById("moreInfoImg").src = body_image_list[i]
                                         break;
                                     }
                                 }
