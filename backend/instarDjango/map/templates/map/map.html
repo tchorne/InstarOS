@@ -42,6 +42,11 @@
                     '{{body.imageUrl}}',
                     {%endfor%}
                     ]
+                    var body_parent_list = [
+                    {% for body in body_list %}
+                    '{{body.parent}}',
+                    {%endfor%}
+                    ]
                     
                     var data = {
                         
@@ -50,11 +55,19 @@
                         
                         ],
                         edges: [
-                        {from: "Sol", to: "The Bleeding Sun"},
+                        //{from: "Sol", to: "The Bleeding Sun"},
                         ]
                     };
                     for(i = 0; i < body_list.length; i++){
                         data.nodes.push({id: body_list[i], fill: {src: body_image_list[i]}})
+                    }
+                    for(i = 0; i < body_list.length; i++){
+                        if (body_list[i] == "Ender"){
+                            data.edges.push({from:"Ender", to:body_list[Math.floor(Math.random()*body_list.length)]});
+                        } 
+                        if (body_parent_list[i] != 'None'){
+                            data.edges.push({from:body_parent_list[i], to:body_list[i]})
+                        }
                     }
                     var chart = anychart.graph(data);
                     // set the title
@@ -95,10 +108,10 @@
         </div>
         <div class="col-md-3">
             <h2 id="moreInfoName">
-                Star name
+                Earth
             </h2>
-            <img src="https://cdn.discordapp.com/attachments/432564281113051136/952994827543404574/1355328252_2.gif" 
-                alt="Star Image" style="width:96px;height:96px;" id="moreInfoImg">
+            <img src="https://cdn.discordapp.com/attachments/432564281113051136/952995078912241674/819133564.gif" 
+                alt="Body_image" style="width:96px;height:96px;" id="moreInfoImg">
             <p id="moreInfoDesc">
                 
             </p>

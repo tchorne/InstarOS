@@ -25,8 +25,11 @@ def submitNote(request, character_id):
     return HttpResponseRedirect(reverse('people:detail', args=(character_id,)))
 
 def deleteNote(request, note_id):
-    note = get_object_or_404(Note, pk=note_id)
-    character = note.character
+    if request.method == 'POST':
 
-    note.delete()
+        note = get_object_or_404(Note, pk=note_id)
+        character = note.character
+
+        note.delete()
+        return HttpResponse(status='200', content={"success": True})
     return HttpResponseRedirect(reverse('people:detail', args=(character.id,)))
