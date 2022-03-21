@@ -28,8 +28,8 @@
     <div class="row" style="height:400px;">
         <div class="col-md-8">
             <div id="container">
+                <button onclick='chartType()' type="button" class="btn btn-primary">Switch View</button>
                 <script type="text/javascript">
-                    
                     
                     // create data
                     var body_list = [
@@ -47,7 +47,18 @@
                     '{{body.parent}}',
                     {%endfor%}
                     ]
+                    var body_x_list = [
+                    {% for body in body_list %}
+                    {{body.x}},
                     
+                    {%endfor%}
+                    ]
+                    var body_y_list = [
+                    {% for body in body_list %}
+                    {{body.y}},
+                    {%endfor%}
+                    ]
+
                     var data = {
                         
                         nodes: [
@@ -59,7 +70,7 @@
                         ]
                     };
                     for(i = 0; i < body_list.length; i++){
-                        data.nodes.push({id: body_list[i], fill: {src: body_image_list[i]}})
+                        data.nodes.push({id: body_list[i], fill: {src: body_image_list[i]}, x: body_x_list[i], y: body_y_list[i]})
                     }
                     for(i = 0; i < body_list.length; i++){
                         if (body_list[i] == "Ender"){
@@ -81,12 +92,14 @@
                     // draw the chart
                     chart.container("container");
                     chart.draw();
-                    
+                    function chartType(){
+                        if (chart.layout().type() == "forced") chart.layout().type("fixed");
+                        else chart.layout().type("forced");
+                    }
                     // add a listener
                     chart.listen('click', function(e){
                         var tag = e.domTarget.tag;
                         if (tag) {
-                            console.log(`Clicked ${tag.type} with ID ${tag.id}`);
                             
                             if (tag.type === 'node') {
                                 // get url from data directly
@@ -102,6 +115,7 @@
                             }
                         }
                     });
+                    
                     
                 </script>
             </div>
