@@ -48,6 +48,7 @@ CSRF_TRUSTED_ORIGINS = ["https://instar-os.herokuapp.com", "http://instar-os.her
 INSTALLED_APPS = [
     'people.apps.PeopleConfig',
     'map.apps.MapConfig',
+    'history.apps.HistoryConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
