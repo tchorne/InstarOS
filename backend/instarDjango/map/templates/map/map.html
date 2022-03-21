@@ -25,9 +25,9 @@
         </ol>
     </nav>
     
-    <div class="row" style="height:400px;">
-        <div class="col-md-8">
-            <div id="container">
+    <div class="row" >
+        <div class="col-md-8" height="flex" style="overflow:shown;">
+            <div id="container" style="height: 500px;">
                 <button onclick='chartType()' type="button" class="btn btn-primary">Switch View</button>
                 <script type="text/javascript">
                     
@@ -74,7 +74,10 @@
                     }
                     for(i = 0; i < body_list.length; i++){
                         if (body_list[i] == "Ender"){
-                            data.edges.push({from:"Ender", to:body_list[Math.floor(Math.random()*body_list.length)]});
+                            var j = Math.floor(Math.random()*body_list.length)
+                            data.edges.push({from:"Ender", to:body_list[j]});
+                            data.nodes[i].x = body_x_list[j];
+                            data.nodes[i].y = body_y_list[j]+30;
                         } 
                         if (body_parent_list[i] != 'None'){
                             data.edges.push({from:body_parent_list[i], to:body_list[i]})
@@ -87,8 +90,14 @@
                         color: "#222",
                         thickness: 2,
                     })
+                    
+
                     chart.edges().selected().stroke("#222", 2);
-                    chart.background().fill("#333")
+                    //chart.background().fill("#333");
+                    chart.background().fill({
+                        src: "https://i.imgur.com/sGcm6DX.png",
+                        mode: "tile"
+                        });
                     // draw the chart
                     chart.container("container");
                     chart.draw();
