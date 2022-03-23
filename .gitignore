@@ -1,4 +1,3 @@
-backend/instarDjango/secretkey.py
 backend/instarDjango/instarDjango/.env
 instar/pyvenv.cfg
 # home = C:\Users\vhhor\AppData\Local\Programs\Python\Python310
