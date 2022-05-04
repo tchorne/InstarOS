@@ -3,13 +3,16 @@ from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.shortcuts import render
 from django.urls import reverse
-from .models import Character, Note
+from .models import Character, Note, Campaign
 
 
 def index(request):
-    character_list = Character.objects.order_by('-name')[::-1]
+    c=request.GET.get('c','1')
+    campaign_list = Campaign.objects.all()
+    character_list = Character.objects.filter(campaign=c).order_by('-name')[::-1]
     context = {
         'character_list': character_list,
+        'campaign_list': campaign_list,
     }
     return render(request,'people/index.html',context)
 

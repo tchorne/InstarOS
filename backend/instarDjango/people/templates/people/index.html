@@ -23,6 +23,12 @@
             </ol>
           </nav>
 
+        <div class="container">
+            {% for campaign in campaign_list%}
+            <a href="?c={{campaign.id}}"> {{campaign.name}} </a>
+            {%endfor%}
+        </div>
+
 
         <section id="characterlist">
             {% if character_list %}

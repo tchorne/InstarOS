@@ -3,7 +3,7 @@ from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.shortcuts import render
 from django.urls import reverse
-from .models import Event
+from .models import Event, Campaign
 
 
 def index(request):
