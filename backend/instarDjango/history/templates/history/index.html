@@ -23,6 +23,14 @@
                 <li class="breadcrumb-item active" aria-current="page"> History </li>
             </ol>
         </nav>
+
+        <div class="container">
+            {% for campaign in campaign_list%}
+            <a href="?c={{campaign.id}}">
+                <button type="button" class="btn btn-primary"> {{campaign.name}} </button>
+            </a>
+            {%endfor%}
+        </div>
         
         
         <section id="timeline">

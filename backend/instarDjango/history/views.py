@@ -7,8 +7,11 @@ from .models import Event, Campaign
 
 
 def index(request):
-    event_list = Event.objects.order_by('-time')
+    c=request.GET.get('c','1')
+    event_list = Event.objects.filter(campaign=c).order_by('-time')
+    campaign_list = Campaign.objects.all()
     context = {
+        'campaign_list': campaign_list,
         'event_list': event_list,
     }
     return render(request,'history/index.html',context)
